@@ -1,5 +1,5 @@
 import java.util.*;
-public class menu {
+public class Menu {
     public static void main(String[] args) {
         Scanner tarayici = new Scanner(System.in);
 
