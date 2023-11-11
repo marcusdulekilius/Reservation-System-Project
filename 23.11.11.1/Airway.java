@@ -1,29 +1,28 @@
-import java.util.Scanner;
-
-public class havayolu {
+import java.util.*;
+public class Airway {
     public static void main(String[] args) {
-        Scanner tarayici = new Scanner(System.in);
-        int[] Istanbul = {1000,1200};
-        int binis, inis, ucret;
-        System.out.print("Kullanmak istediginiz güzergahı seçiniz: ");
-        int rota = tarayici.nextInt();
-        while(rota > 2 || rota < 1){
-            System.out.println("Lütfen geçerli bir güzergah numarası seçiniz.");
-            rota = tarayici.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int[] Istanbul = {1000, 1200};
+        int departure, arrival, price;
+        System.out.print("Select the route you want to use: ");
+        int route = scanner.nextInt();
+        while (route > 2 || route < 1) {
+            System.out.println("Please choose a valid route number.");
+            route = scanner.nextInt();
         }
-        switch(rota){
+        switch (route) {
             case 1:
-            System.out.println("1. rotayı seçtiniz.");
-            System.out.println("ıstanbul - Konya - Istanbul");
-            ucret = 1200;
-            System.out.println(ucret);
-            break;
+                System.out.println("You have selected Route 1.");
+                System.out.println("Istanbul - Konya - Istanbul");
+                price = 1200;
+                System.out.println(price);
+                break;
             case 2:
-            System.out.println("2. Rotayı seçtiniz.");
-            System.out.println("Istanbul - Ankara - Istanbul");
-            ucret = 1000;
-            System.out.println(ucret);
-            break;
+                System.out.println("You have selected Route 2.");
+                System.out.println("Istanbul - Ankara - Istanbul");
+                price = 1000;
+                System.out.println(price);
+                break;
+        }
     }
-}
 }
