@@ -2,92 +2,91 @@ import java.util.*;
 
 public class Highway {
     public static void main(String[] args) {
-         Scanner tarayici = new Scanner(System.in);
-        int[] Ankara = {300,400};
-        int[] Eskişehir = {150,100,150};
-        int[] Istanbul = {300,150,50,300};
-        int[] Kocaeli = {400,100,50,250};
-        int[] Konya = {150,300,250};
-        int binis, inis, ucret;
-        System.out.print("Kullanmak istediginiz güzergahı seçiniz: ");
-        int rota = tarayici.nextInt();
-        while(rota > 2 || rota < 1){
-            System.out.println("Lütfen geçerli bir güzergah numarası seçiniz.");
-            rota = tarayici.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int[] Ankara = {300, 400};
+        int[] Eskişehir = {150, 100, 150};
+        int[] Istanbul = {300, 150, 50, 300};
+        int[] Kocaeli = {400, 100, 50, 250};
+        int[] Konya = {150, 300, 250};
+        int departure, arrival, price;
+        System.out.print("Select the route you want to use: ");
+        int route = scanner.nextInt();
+        while (route > 2 || route < 1) {
+            System.out.println("Please choose a valid route number.");
+            route = scanner.nextInt();
         }
-        switch(rota){
+        switch (route) {
             case 1: {
-                int[] Rotamiz;
-                System.out.println("1. Rotayı Seçtiniz.");
-                System.out.println("Rotanız: Istanbul - Kocaeli - Ankara - Kocaeli - Istanbul");
-                System.out.print("Nerede binmek ve nerede inmek istersiniz? (Ankara:1 , Istanbul:2 , Kocaeli:3): ");
-                binis = tarayici.nextInt();
-                inis = tarayici.nextInt();
-                while (binis == inis) {
-                    System.out.println("Lütfen farklı bir iniş noktası seçin. Aynı şehir seçilemez.");
-                    inis = tarayici.nextInt();
+                int[] selectedRoute;
+                System.out.println("You have selected Route 1.");
+                System.out.println("Your Route: Istanbul - Kocaeli - Ankara - Kocaeli - Istanbul");
+                System.out.print("Where do you want to board and disembark? (Ankara: 1, Istanbul: 2, Kocaeli: 3): ");
+                departure = scanner.nextInt();
+                arrival = scanner.nextInt();
+                while (departure == arrival) {
+                    System.out.println("Please choose a different destination. You cannot select the same city.");
+                    arrival = scanner.nextInt();
                 }
-                switch(binis){
+                switch (departure) {
                     case 1:
-                    Rotamiz= Ankara;
-                    ucret = Ankara[inis-1];
-                    System.out.print(ucret);
-                    break;
+                        selectedRoute = Ankara;
+                        price = Ankara[arrival - 1];
+                        System.out.print(price);
+                        break;
                     case 2:
-                    Rotamiz= Istanbul;
-                    ucret = Istanbul[inis-1];
-                    System.out.print(ucret);
-                    break;
+                        selectedRoute = Istanbul;
+                        price = Istanbul[arrival - 1];
+                        System.out.print(price);
+                        break;
                     case 3:
-                    Rotamiz= Kocaeli;
-                    ucret = Kocaeli[inis-1];
-                    System.out.print(ucret);
-                    break;
+                        selectedRoute = Kocaeli;
+                        price = Kocaeli[arrival - 1];
+                        System.out.print(price);
+                        break;
                     default:
-                    System.out.println("Bu rotada sadece listelenen 3 şehir arası yolculuklar mümkündür.");
-                    break;
-
+                        System.out.println("Only journeys between the 3 cities listed are possible on this route.");
+                        break;
                 }
             }
             break;
-            case 2:{
-                int[] Rotamiz;
-                System.out.println("2. Rotayı seçtiniz.");
-                System.out.println("Rotanız: Istanbul - Kocaeli - Eskişehir - Konya - Eskişehir - Kocaeli - Istanbul");
-                System.out.print("Nerede binmek ve nerede inmek istersiniz? ( Eskişehir:1 , Istanbul:2 , Kocaeli:3 , Konya:4): ");
-                binis = tarayici.nextInt();
-                inis = tarayici.nextInt();
-                while (binis == inis) {
-                    System.out.print("Lütfen farklı bir iniş noktası seçin. Aynı şehir seçilemez.");
-                    inis = tarayici.nextInt();
+            case 2: {
+                int[] selectedRoute;
+                System.out.println("You have selected Route 2.");
+                System.out.println("Your Route: Istanbul - Kocaeli - Eskişehir - Konya - Eskişehir - Kocaeli - Istanbul");
+                System.out.print("Where do you want to board and disembark? (Eskişehir: 1, Istanbul: 2, Kocaeli: 3, Konya: 4): ");
+                departure = scanner.nextInt();
+                arrival = scanner.nextInt();
+                while (departure == arrival) {
+                    System.out.print("Please choose a different destination. You cannot select the same city.");
+                    arrival = scanner.nextInt();
                 }
-                switch(binis){
+                switch (departure) {
                     case 1:
-                    Rotamiz= Eskişehir;
-                    ucret = Eskişehir[inis-1];
-                    System.out.print(ucret);
-                    break;
+                        selectedRoute = Eskişehir;
+                        price = Eskişehir[arrival - 1];
+                        System.out.print(price);
+                        break;
                     case 2:
-                    Rotamiz= Istanbul;
-                    ucret =Istanbul[inis-1];
-                    System.out.print(ucret);
-                    break;
+                        selectedRoute = Istanbul;
+                        price = Istanbul[arrival - 1];
+                        System.out.print(price);
+                        break;
                     case 3:
-                    Rotamiz= Kocaeli;
-                    ucret = Kocaeli[inis-1];
-                    System.out.print(ucret);
-                    break;
+                        selectedRoute = Kocaeli;
+                        price = Kocaeli[arrival - 1];
+                        System.out.print(price);
+                        break;
                     case 4:
-                    Rotamiz= Konya;
-                    ucret = Konya[inis];
-                    System.out.print(ucret);
-                    break;
+                        selectedRoute = Konya;
+                        price = Konya[arrival];
+                        System.out.print(price);
+                        break;
                     default:
-                    System.out.println("Bu rotada sadece listelenen 4 şehir arası yolculuklar mümkündür.");
-                    break;
+                        System.out.println("Only journeys between the 4 cities listed are possible on this route.");
+                        break;
+                }
             }
             break;
         }
     }
-}
 }
