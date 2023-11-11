@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class karayolu {
+public class Highway {
     public static void main(String[] args) {
          Scanner tarayici = new Scanner(System.in);
         int[] Ankara = {300,400};
