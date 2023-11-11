@@ -1,25 +1,24 @@
 import java.util.*;
 public class Menu {
     public static void main(String[] args) {
-        Scanner tarayici = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Lütfen bir seçenek seçin:");
-        System.out.println("1) Havayolu");
-        System.out.println("2) Karayolu");
-        System.out.println("3) Demiryolu");
+        System.out.println("Please select an option:");
+        System.out.println("1) Airway");
+        System.out.println("2) Highway");
+        System.out.println("3) Railway");
 
-        int secim = tarayici.nextInt();
-        while(secim < 1 || secim > 3) {
-            System.out.println("Geçersiz seçenek.");
-            secim = tarayici.nextInt();
+        int choice = scanner.nextInt();
+        while (choice < 1 || choice > 3) {
+            System.out.println("Invalid choice.");
+            choice = scanner.nextInt();
         }
-         if (secim == 1) {
-            havayolu.main(null); // Havayolu sınıfını çağır ve çalıştır
-        } else if (secim == 2) {
-            karayolu.main(null); // Karayolu sınıfını çağır ve çalıştır
-            }
-            else if (secim == 3) {
-                demiryolu.main(null);
+        if (choice == 1) {
+            Airway.main(null);
+        } else if (choice == 2) {
+            Highway.main(null);
+        } else if (choice == 3) {
+            Railway.main(null);
         } 
     }
 }
