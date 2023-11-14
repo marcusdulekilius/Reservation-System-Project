@@ -1,0 +1,11 @@
++ Created a Login panel.
++ Added a logo from files (All are in readme file).
++ Added control mechanisms for username and password check.
++ Added a Show Password button.
++ Created another panel for options.
++ Added Main Menu, Back and Forward buttons.
++ Added Passenger, Personnel and Company buttons.
++ Login screen color optimized (generally).
++ Added functions for Main Menu, Back and Forward buttons.
+- Removed Main Menu function because of wrong use.
+
