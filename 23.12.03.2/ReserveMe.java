@@ -161,11 +161,11 @@ public class ReserveMe extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Display the current fee
                 JOptionPane.showMessageDialog(null, "Current fee: "+ newfee +" TL");
-    
                 // Ask for a new fee
                 String newFeeString = JOptionPane.showInputDialog(null, "Enter the new fee:");
                 try {
                     int newFee = Integer.parseInt(newFeeString);
+                      newfee = newFee;
                     JOptionPane.showMessageDialog(null, "Fee updated successfully!");
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "Invalid input. Please enter a valid number.");
